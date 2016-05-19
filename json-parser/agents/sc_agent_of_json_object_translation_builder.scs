@@ -1,0 +1,51 @@
+sc_agent_of_json_object_translation_builder
+=> nrel_main_idtf:
+	[sc-агент для построения общих конструкций трансляции погружаемого в память узла с JSON содержимым] 
+	(* <- lang_ru;; *);
+	[sc-agent generating top-level constructions of translated node having JSON formatted content] 
+	(* <- lang_en;; *);
+
+<- abstract_sc_agent;
+
+=> nrel_primary_initiation_condition: 
+	(sc_event_add_output_arc => question_initiated);
+
+=> nrel_initiation_condition_and_result: 
+	(..sc_agent_of_json_object_translation_builder_condition => ..agent_of_json_object_translation_builder_result);
+
+=>nrel_inclusion: ...
+(*
+<- platform_independent_abstract_sc_agent;;
+<= nrel_sc_agent_program:
+{
+agent_of_json_object_translation_builder
+};;
+->sc_agent_of_json_object_translation_builder (* <- active_sc_agent;; *);;
+*);
+
+
+<= nrel_sc_agent_key_sc_elements: 
+	{
+	question_initiated;
+	question;
+	question_test
+	};;
+
+
+
+..sc_agent_of_json_object_translation_builder_constants
+= [*
+	question_test _-> .._question;;
+	question_initiated _-> .._question;;
+	question _-> .._question;;
+	.._question _-> .._parameter;;
+*];;
+
+..sc_agent_of_json_object_translation_builder_result
+= [*
+	question_test _-> .._question;;
+	question_finished _-> .._question;;
+	question _-> .._question;;
+	.._question _=> nrel_answer:: .._answer;;
+	.._question _-> .._parameter;;
+*];;

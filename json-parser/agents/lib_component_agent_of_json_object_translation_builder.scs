@@ -1,0 +1,10 @@
+lib_component_agent_of_json_object_translation_builder
+=> nrel_main_idtf:
+	[Компонент библиотеки. агентная scp-программа для построения общих конструкций трансляции погружаемого в память узла с JSON содержимым]
+	(* <- lang_ru;; *);
+	[Library component. agent scp-program of for generation of top-level constructions of translated node having JSON formatted content]
+	(* <- lang_en;; *);
+
+<- library_of_platform_independent_reusable_components; 
+<- library_of_atomic_reusable_components;; 
+
